@@ -1,6 +1,7 @@
 import React from 'react';
 import { NextPageContext } from 'next';
-import { getSession, signOut } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
+import Navbar from '@/components/navbar';
 
 /*
 import Navbar from '@/components/Navbar';
@@ -28,17 +29,12 @@ export async function getServerSideProps(context: NextPageContext) {
   }
 }
 
-const Home = () => {
-  /*const { data: movies = [] } = useMovieList();
-  const { data: favorites = [] } = useFavorites();
-  const {isOpen, closeModal} = useInfoModalStore(); */
+export default function Home() {
 
   return ( 
     <>
-      <h1 className="text-white">Netflix HOME</h1>
-      <button onClick={() => signOut()} className="h-10 w-full bg-white">Logout!</button>
+      <Navbar />
+      <Billboard />
     </> 
   );
-}
-
-export default Home;
+};
